@@ -1,4 +1,5 @@
 # projet-python-collaboratif
+# "le project sera presenter par: Yassmine Essaleh ; Ikrame boutahri ; Hafsa bouchnafa "
 To do List  
 1️⃣ Présentation du projet
 Ce projet consiste à développer une application de gestion de tâches (To-Do List) en Python. L’objectif est de permettre à un utilisateur d’ajouter, supprimer, modifier et marquer des tâches comme terminées. L’application offrira une interface conviviale et intuitive pour une meilleure gestion du temps et des priorités.
