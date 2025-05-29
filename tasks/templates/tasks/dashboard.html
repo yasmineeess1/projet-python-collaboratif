@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>📊 Tableau de Bord</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'), linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .stat-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #f9f9f9;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-box p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 25px;
+            margin-top: 10px;
+        }
+
+        .progress {
+            height: 100%;
+            
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+            transition: width 0.4s ease;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background: linear-gradient(to right, #5a6eea, #683ba2);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Tableau de Bord</h1>
+
+        <div class="stat-box">
+            <p><strong>Total de tâches :</strong> {{ total_tasks }}</p>
+            <p><strong>Tâches complétées :</strong> {{ completed_tasks }}</p>
+            <p><strong>Pourcentage complété :</strong> {{ completion_percentage }}%</p>
+
+            <div class="progress-bar">
+                <div class="progress">{{ completion_percentage }}%</div>
+            </div>
+        </div>
+
+        <a href="{% url 'list' %}">⬅ Retour à la liste</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        /* Reset et styles de base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        /* Conteneur principal */
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+        }
+        
+        /* Carte du formulaire */
+        .login-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        /* Titre */
+        .login-title {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        /* Formulaire */
+        .login-form {
+            margin-top: 1.5rem;
+        }
+        
+        /* Groupes de champs */
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        /* Bouton */
+        .login-button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 0.5rem;
+        }
+        
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Liens supplémentaires */
+        .login-links {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .login-links a {
+            color: #7f8c8d;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .login-links a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+        
+        /* Messages d'erreur */
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            text-align: left;
+        }
+        
+        /* Logo (optionnel) */
+        .login-logo {
+            margin-bottom: 1.5rem;
+        }
+        
+        .login-logo img {
+            height: 50px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 1.5rem;
+            }
+            
+            .login-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Optionnel: Ajouter un logo -->
+            <!-- <div class="login-logo">
+                <img src="logo.png" alt="Logo">
+            </div> -->
+            
+            <h1 class="login-title">Connexion</h1>
+            
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required>
+                    <!-- Afficher les erreurs pour le champ username si nécessaire -->
+                    <!-- <div class="error-message">Message d'erreur</div> -->
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                    <!-- Afficher les erreurs pour le champ password si nécessaire -->
+                    <!-- <div class="error-message">Message d'erreur</div> -->
+                </div>
+                
+                <button type="submit" class="login-button">Se connecter</button>
+                
+                <div class="login-links">
+                    <a href="#">Mot de passe oublié ?</a>
+                    <!-- Optionnel: Lien vers la page d'inscription -->
+                    <!-- <span> | </span>
+                    <a href="#">Créer un compte</a> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

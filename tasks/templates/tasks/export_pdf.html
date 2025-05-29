@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 14px; }
+        h1 { text-align: center; }
+        table {
+            width: 100%; border-collapse: collapse; margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: left;
+        }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>📝 Liste des tâches</h1>
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Priorité</th>
+            <th>Statut</th>
+            <th>Date de création</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.priority }}</td>
+            <td>{% if task.completed %}✅ Complétée{% else %}⏳ En cours{% endif %}</td>
+            <td>{{ task.created|date:"d/m/Y H:i" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
